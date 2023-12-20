@@ -8,9 +8,8 @@ function fetchAgentData() {
 
   try {
     const url = `https://${companyDomain}.freshdesk.com/api/v2/agents?per_page=100`;
-    console.log(url)
+
     const response = UrlFetchApp.fetch(url, options);
-    console.log(response)
 
     let allAgents = [["Email", "Status"]]
     if (response.getResponseCode() === 200) {
